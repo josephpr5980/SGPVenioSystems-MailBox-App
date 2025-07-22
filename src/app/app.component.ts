@@ -17,6 +17,39 @@ export type Folder = 'Inbox' | 'Flagged' | 'Sent' | 'Drafts' | 'Trash' | 'More';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  toggleFullscreen() {
+    const elem = document.documentElement;
+    if (!document.fullscreenElement) {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if ((elem as any).msRequestFullscreen) {
+        (elem as any).msRequestFullscreen();
+      } else if ((elem as any).mozRequestFullScreen) {
+        (elem as any).mozRequestFullScreen();
+      } else if ((elem as any).webkitRequestFullscreen) {
+        (elem as any).webkitRequestFullscreen();
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if ((document as any).msExitFullscreen) {
+        (document as any).msExitFullscreen();
+      } else if ((document as any).mozCancelFullScreen) {
+        (document as any).mozCancelFullScreen();
+      } else if ((document as any).webkitExitFullscreen) {
+        (document as any).webkitExitFullscreen();
+      }
+    }
+  }
+  // ...existing code...
+  onZoomChange(event: any) {
+    const zoom = Number(event.target.value) / 100;
+    const mainContent = document.getElementById('mainContent');
+    if (mainContent) {
+      mainContent.style.transform = `scale(${zoom})`;
+      mainContent.style.transformOrigin = 'top left';
+    }
+  }
   messageText: string = '';
   searchTerm: string = '';
   title = 'sgpmailbox-app';
