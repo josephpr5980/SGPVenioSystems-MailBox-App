@@ -1,0 +1,240 @@
+$sidebar-bg: #f8f9fa;
+$sidebar-width: 260px;
+$main-bg: #f5f6fa;
+$card-radius: 16px;
+$shadow: 0 2px 12px rgba(0,0,0,0.06);
+$primary: #ff4a4a;
+
+.mailbox-layout {
+  display: flex;
+  min-height: 100vh;
+  background: $main-bg;
+}
+
+.sidebar {
+  width: $sidebar-width;
+  background: $sidebar-bg;
+  padding: 2rem 1rem 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: $shadow;
+  .app-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+  .nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s;
+      img {
+        width: 22px;
+        height: 22px;
+      }
+      &.selected, &:hover {
+        background: #e9ecef;
+        font-weight: 600;
+      }
+    }
+  }
+  .folders-section {
+    margin-bottom: 2rem;
+    .folders-title {
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      .add-btn {
+        background: #e3eafc;
+        border: none;
+        border-radius: 12px;
+        padding: 0.2rem 0.8rem;
+        font-size: 0.9rem;
+        color: #3a7afe;
+        cursor: pointer;
+      }
+    }
+    .folders-list {
+      list-style: none;
+      padding: 0;
+      li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+        .color-dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          display: inline-block;
+        }
+        &.office { background: #3a7afe; }
+        &.personal { background: #ffb347; }
+        &.freelance { background: #ff4a4a; }
+      }
+    }
+  }
+  .compose-btn {
+    background: $primary;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 0.8rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: auto;
+    box-shadow: 0 4px 16px rgba(255,74,74,0.15);
+    cursor: pointer;
+    transition: background 0.2s;
+    &:hover {
+      background: darken($primary, 8%);
+    }
+  }
+}
+
+.mail-main {
+  flex: 1;
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+  .email-list {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 340px;
+    min-width: 280px;
+    .selected {
+      box-shadow: 0 4px 16px rgba(255,74,74,0.08);
+    }
+  }
+  .email-detail {
+    flex: 1;
+    background: #fff;
+    border-radius: $card-radius;
+    box-shadow: $shadow;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    .email-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+      .email-date {
+        color: #888;
+        font-size: 0.95rem;
+      }
+    }
+    .email-content {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+    }
+    .attachments {
+      margin-bottom: 1.5rem;
+      .attachment-link {
+        color: #3a7afe;
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+      .attachment-images {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+        img {
+          width: 80px;
+          height: 80px;
+          object-fit: cover;
+          border-radius: 10px;
+          box-shadow: $shadow;
+        }
+      }
+      .download-btn {
+        background: #e3eafc;
+        border: none;
+        border-radius: 8px;
+        padding: 0.5rem 1.2rem;
+        color: #3a7afe;
+        font-weight: 600;
+        cursor: pointer;
+        margin-right: 1rem;
+      }
+      .file-size {
+        color: #888;
+        font-size: 0.95rem;
+      }
+    }
+    .message-box {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      input {
+        flex: 1;
+        padding: 0.7rem 1rem;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        font-size: 1rem;
+      }
+      .send-btn {
+        background: $primary;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 0.7rem 1.2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+        &:hover {
+          background: darken($primary, 8%);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .mailbox-layout {
+    flex-direction: column;
+    .sidebar {
+      width: 100%;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 1rem;
+      .app-title {
+        margin-bottom: 0;
+      }
+      .compose-btn {
+        margin-top: 0;
+      }
+    }
+    .mail-main {
+      flex-direction: column;
+      padding: 1rem;
+      gap: 1rem;
+      .email-list {
+        max-width: 100%;
+        min-width: 0;
+      }
+      .email-detail {
+        padding: 1rem;
+      }
+    }
+  }
+}

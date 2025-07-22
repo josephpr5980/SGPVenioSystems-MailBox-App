@@ -1,0 +1,9 @@
+<p>navigation works!</p>
+<nav class="mail-nav">
+  <ul>
+    <li *ngFor="let folder of folders" [class.selected]="selected === folder.name" (click)="select(folder.name)">
+      <img [src]="folder.icon" alt="{{folder.name}} icon" class="nav-icon" />
+      <span>{{ folder.name }}</span>
+    </li>
+  </ul>
+</nav>
