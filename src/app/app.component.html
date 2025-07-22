@@ -443,7 +443,7 @@
   }
 
   .office {
-    background-color: #2196f3;
+    background-color: #4caf50;
   }
 
   .personal {
@@ -3289,8 +3289,10 @@
       <i class="fas fa-th-large"></i>
     </span>
     <nav aria-label="breadcrumb">
+      
       <ol style="display: flex; list-style: none; padding: 0; margin: 0;">
-        <li style="color: #888; font-weight: 500;">Mailbox</li>
+         <img src="assets/more.svg" style="margin-right:12px;">
+         <li style="color: #888; font-weight: 500;">Mailbox</li>
         <li style="margin: 0 8px; color: #ccc;">&#8250;</li>
         <li style="font-weight: bold; color: #222;">Mailbox</li>
       </ol>
@@ -3315,7 +3317,7 @@
 
     <aside class="sidebar">
       <div class="sidebar-header" style="display: flex; align-items: center; gap: 8px;">
-        <img src="assets/attachments/image9.png" alt="User" style="width:48px; height:48px; border-radius:50%;" />
+        <img src="assets/attachments/image9.png" style="width:48px; height:48px; border-radius:50%;" />
         <div>
           <div style="font-weight:600; color:#1ca3e9; font-size:16px;">Mike Manson</div>
           <div style="color:#444; font-size:14px;">iamkiran@gmail.com</div>
@@ -3392,15 +3394,18 @@
         </div>
         <div class="email-content">{{ selectedEmail.content }}</div>
         <div class="attachments">
-          <span class="attachment-link">3 Attachments</span>
+          <span class="attachment-link">4 Attachments</span>
           <div class="attachment-images">
             <img src="assets/attachments/image3.png" alt="Attachment" />
             <img src="assets/attachments/image4.png" alt="Attachment" />
             <img src="assets/attachments/image5.png" alt="Attachment" />
             <img src="assets/attachments/image6.png" alt="Attachment" />
           </div>
-          <button class="download-btn">Download</button>
-          <span class="file-size">5.6 mb total</span>
+          <button class="download-btn">
+            <img src="assets/attachments/download.svg" alt="Attachment" style="width:18px; height:18px; margin-right:6px; vertical-align:middle;" />
+            Download
+          </button>
+          <span>5.6 mb total</span>
         </div>
         <div class="message-box">
           <input type="text" [(ngModel)]="messageText" placeholder="Type Message..." style="border:none; outline:none; flex:1; font-size:15px; padding:12px 16px; background:transparent;" />

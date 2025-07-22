@@ -18,17 +18,6 @@ export type Folder = 'Inbox' | 'Flagged' | 'Sent' | 'Drafts' | 'Trash' | 'More';
 })
 export class AppComponent {
   messageText: string = '';
-
-  onAttach() {
-    alert('Attach functionality coming soon!');
-  }
-
-  onSendMessage() {
-    if (this.messageText.trim()) {
-      alert('Message sent: ' + this.messageText);
-      this.messageText = '';
-    }
-  }
   searchTerm: string = '';
   title = 'sgpmailbox-app';
 
@@ -40,17 +29,33 @@ export class AppComponent {
         avatarUrl: 'assets/image1.png',
         senderName: 'Jane Doe',
         date: 'Today 8:30 AM',
-        snippet: 'Welcome to your new mailbox app! This is a sample email card.',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fermentum facilisis libero, venenatis mattis orci hendrerit eget. Etiam ultrices mollis justo, nec fermentum elit viverra eu. Cras at cursus turpis. Nullam magna sem, vulputate quis massa nec, mollis sollicitudin dui. Sed eu massa in arcu pharetra posuere. Phasellus maximus neque non ex dapibus fringilla. Praesent nec lacinia enim. Curabitur a dui nisl',
+        snippet: 'Welcome Jane Doe! This is a sample email card.',
+        content: 'Welcome to the team! We’re thrilled to have you on board. This email card is a small welcome note to help you feel at home. Looking forward to working together and achieving great things!',
         senderEmail: 'janedoe@example.com'
       },
       {
         avatarUrl: 'assets/image2.png',
         senderName: 'John Smith',
         date: 'Yesterday 9:30 AM',
-        snippet: 'Your Angular library is ready. Try adding more features!',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fermentum facilisis libero, venenatis mattis orci hendrerit eget. Etiam ultrices mollis justo, nec fermentum elit viverra eu. Cras at cursus turpis. Nullam magna sem, vulputate quis massa nec, mollis sollicitudin dui. Sed eu massa in arcu pharetra posuere. Phasellus maximus neque non ex dapibus fringilla. Praesent nec lacinia enim. Curabitur a dui nisl',
+        snippet: 'Welcome John Smith! This is a sample email card.',
+        content: 'Welcome to the team! We’re thrilled to have you on board. This email card is a small welcome note to help you feel at home. Looking forward to working together and achieving great things!',
         senderEmail: 'johnsmith@example.com'
+      },
+      {
+        avatarUrl: 'assets/image3.png',
+        senderName: 'Lilly',
+        date: 'Today 10:15 AM',
+        snippet: 'Welcome Lilly! This is a sample email card.',
+        content: 'Welcome to the team! We’re thrilled to have you on board. This email card is a small welcome note to help you feel at home. Looking forward to working together and achieving great things!',
+        senderEmail: 'lilly@example.com'
+      },
+      {
+        avatarUrl: 'assets/image4.png',
+        senderName: 'Smith',
+        date: 'Today 11:00 AM',
+        snippet: 'Welcome Smith! This is a sample email card.',
+        content: 'Welcome to the team! We’re thrilled to have you on board. This email card is a small welcome note to help you feel at home. Looking forward to working together and achieving great things!',
+        senderEmail: 'smith@example.com'
       }
     ],
     Flagged: [],
@@ -70,6 +75,17 @@ export class AppComponent {
 
   selectedFolder: Folder = 'Inbox';
   selectedEmail: Email | null = null;
+
+  onAttach() {
+    alert('Attach functionality coming soon!');
+  }
+
+  onSendMessage() {
+    if (this.messageText.trim()) {
+      alert('Message sent: ' + this.messageText);
+      this.messageText = '';
+    }
+  }
 
   get emails(): Email[] {
     return this.folders[this.selectedFolder] || [];
