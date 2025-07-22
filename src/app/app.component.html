@@ -3309,7 +3309,19 @@
 <span style="cursor:pointer;" (click)="toggleFullscreen()" title="Toggle Fullscreen">
   <img src="assets/attachments/fullscreen.png" alt="Fullscreen" style="width:22px; height:22px; vertical-align:middle;"/>
 </span>
-    <span style="font-size: 16px; color: #888; cursor: pointer;">&#63;</span>
+    <span 
+      style="font-size: 16px; color: #888; cursor: pointer; position: relative;" 
+      (click)="showHelpMenu = !showHelpMenu" 
+      title="Help"
+    >&#63;</span>
+    <div 
+      *ngIf="showHelpMenu" 
+      style="position: absolute; right: 0; top: 40px; background: #fff; box-shadow: 0 4px 16px rgba(0,0,0,0.12); border-radius: 12px; padding: 24px 32px; z-index: 1000; min-width: 220px;"
+    >
+      <div style="padding: 8px 0; cursor: pointer;" (click)="onGetHelp(); showHelpMenu = false">Get Help</div>
+      <div style="padding: 8px 0; cursor: pointer;" (click)="onShareFeedback(); showHelpMenu = false">Share Feedback</div>
+      <div style="padding: 8px 0; cursor: pointer;" (click)="onLegalNotices(); showHelpMenu = false">Legal Notices</div>
+    </div>
     <button style="background: none; border: 1px solid #eee; border-radius: 20px; padding: 4px 16px; color: #0078d4; font-weight: 500; cursor: pointer;">Sign in</button>
   </div>
 </div>

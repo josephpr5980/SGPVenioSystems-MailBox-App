@@ -17,6 +17,22 @@ export type Folder = 'Inbox' | 'Flagged' | 'Sent' | 'Drafts' | 'Trash' | 'More';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  showHelpMenu = false;
+
+  onGetHelp() {
+    // Implement help logic here
+   
+  }
+
+  onShareFeedback() {
+    // Implement feedback logic here
+    
+  }
+
+  onLegalNotices() {
+    // Implement legal notices logic here
+    
+  }
   toggleFullscreen() {
     const elem = document.documentElement;
     if (!document.fullscreenElement) {
