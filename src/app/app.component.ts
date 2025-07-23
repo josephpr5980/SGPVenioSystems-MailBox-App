@@ -85,7 +85,7 @@ export class AppComponent {
         date: 'Today 8:30 AM',
         snippet: 'Welcome Jane Doe! This is a sample email card.',
         content: 'Welcome to the team! We’re thrilled to have you on board. This email card is a small welcome note to help you feel at home. Looking forward to working together and achieving great things!',
-        senderEmail: 'janedoe@example.com'
+        senderEmail: 'janedoe@gmail.com'
       },
       {
         avatarUrl: 'assets/image2.png',
@@ -93,7 +93,7 @@ export class AppComponent {
         date: 'Yesterday 9:30 AM',
         snippet: 'Welcome John Smith! This is a sample email card.',
         content: 'Welcome to the team! We’re thrilled to have you on board. This email card is a small welcome note to help you feel at home. Looking forward to working together and achieving great things!',
-        senderEmail: 'johnsmith@example.com'
+        senderEmail: 'johnsmith@gmail.com'
       },
       {
         avatarUrl: 'assets/image3.png',
@@ -101,7 +101,7 @@ export class AppComponent {
         date: 'Today 10:15 AM',
         snippet: 'Welcome Lilly! This is a sample email card.',
         content: 'Welcome to the team! We’re thrilled to have you on board. This email card is a small welcome note to help you feel at home. Looking forward to working together and achieving great things!',
-        senderEmail: 'lilly@example.com'
+        senderEmail: 'lilly@gmail.com'
       },
       {
         avatarUrl: 'assets/image4.png',
@@ -109,7 +109,7 @@ export class AppComponent {
         date: 'Today 11:00 AM',
         snippet: 'Welcome Smith! This is a sample email card.',
         content: 'Welcome to the team! We’re thrilled to have you on board. This email card is a small welcome note to help you feel at home. Looking forward to working together and achieving great things!',
-        senderEmail: 'smith@example.com'
+        senderEmail: 'smith@gmail.com'
       }
     ],
     Flagged: [],
