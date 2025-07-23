@@ -3285,14 +3285,14 @@
 
 <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 16px; border-bottom: 1px solid #eee; font-family: Segoe UI, Arial, sans-serif;">
   <div style="display: flex; align-items: center;">
-    <span style="font-size: 18px; color: #666; margin-right: 10px;">
+    <span style="font-size: 18px; color: #666; margin-right: 10px; cursor:pointer;" (click)="toggleCompressed()" [title]="isCompressed ? 'Expand' : 'Compress'">
       <i class="fas fa-th-large"></i>
     </span>
     <nav aria-label="breadcrumb">
       
       <ol style="display: flex; list-style: none; padding: 0; margin: 0;">
          <img src="assets/more.svg" style="margin-right:12px;">
-         <li style="color: #888; font-weight: 500;">Mailbox</li>
+         <li style="color: #888; font-weight: 500; cursor:pointer;" (click)="toggleCompressed()">Mailbox</li>
         <li style="margin: 0 8px; color: #ccc;">&#8250;</li>
         <li style="font-weight: bold; color: #222;">Mailbox</li>
       </ol>
@@ -3326,9 +3326,10 @@
   </div>
 </div>
 
-<div class="content" role="main" id="mainContent">
+  <div class="content" role="main" id="mainContent" [class.compressed]="isCompressed">
 
-  <div class="mailbox-layout">
+  <!-- mailbox-layout is always present; compressed state is handled by class binding -->
+  <div class="mailbox-layout" [ngClass]="{'compressed': isCompressed}" [style.cursor]="isCompressed ? 'pointer' : 'default'" (click)="isCompressed ? toggleCompressed() : null">
     
 
 

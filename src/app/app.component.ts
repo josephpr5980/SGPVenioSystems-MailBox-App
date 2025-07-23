@@ -18,6 +18,11 @@ export type Folder = 'Inbox' | 'Flagged' | 'Sent' | 'Drafts' | 'Trash' | 'More';
 })
 export class AppComponent {
   showHelpMenu = false;
+  isCompressed: boolean = false;
+
+  toggleCompressed() {
+    this.isCompressed = !this.isCompressed;
+  }
 
   onGetHelp() {
     // Implement help logic here
