@@ -81,19 +81,19 @@ export class AppComponent {
     Inbox: [
       {
         avatarUrl: 'assets/image1.png',
-        senderName: 'Jane Doe',
+        senderName: 'Jane',
         date: 'Today 8:30 AM',
-        snippet: 'Welcome Jane Doe! This is a sample email card.',
+        snippet: 'Welcome Jane! This is a sample email card.',
         content: 'Welcome to the team! We’re thrilled to have you on board. This email card is a small welcome note to help you feel at home. Looking forward to working together and achieving great things!',
-        senderEmail: 'janedoe@gmail.com'
+        senderEmail: 'jane@gmail.com'
       },
       {
         avatarUrl: 'assets/image2.png',
-        senderName: 'John Smith',
+        senderName: 'John',
         date: 'Yesterday 9:30 AM',
-        snippet: 'Welcome John Smith! This is a sample email card.',
+        snippet: 'Welcome John! This is a sample email card.',
         content: 'Welcome to the team! We’re thrilled to have you on board. This email card is a small welcome note to help you feel at home. Looking forward to working together and achieving great things!',
-        senderEmail: 'johnsmith@gmail.com'
+        senderEmail: 'john@gmail.com'
       },
       {
         avatarUrl: 'assets/image3.png',
@@ -110,7 +110,23 @@ export class AppComponent {
         snippet: 'Welcome Smith! This is a sample email card.',
         content: 'Welcome to the team! We’re thrilled to have you on board. This email card is a small welcome note to help you feel at home. Looking forward to working together and achieving great things!',
         senderEmail: 'smith@gmail.com'
-      }
+      },
+      {
+        avatarUrl: 'assets/image2.png',
+        senderName: 'Patel',
+        date: 'Today 11:30 AM',
+        snippet: 'Welcome Priya! This is a sample email card.',
+        content: 'Glad to connect! This is a sample email card for Patel. Wishing you a productive day ahead.',
+        senderEmail: 'patel@example.com'
+      },
+      {
+        avatarUrl: 'assets/image3.png',
+        senderName: 'Alex',
+        date: 'Today 12:00 PM',
+        snippet: 'Welcome Alex! This is a sample email card.',
+        content: 'Hello Alex! This is a sample email card. Let’s make the most of our collaboration.',
+        senderEmail: 'alex@example.com'
+      },
     ],
     Flagged: [],
     Sent: [
