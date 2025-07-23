@@ -3423,13 +3423,27 @@
          <img src="assets/attachments/group2.svg" alt="Attachment" style="width:100px; height:80px; "/>
          </div>
          <div class="email-header">
-          <img [src]="selectedEmail.avatarUrl" alt="Avatar" class="avatar" style="width:48px; height:48px; border-radius:50%;"  />
-          <div>
-            <div style="font-weight:600; color:#1ca3e9; font-size:16px;">{{ selectedEmail.senderName }}</div>
-            <div style="color:#444; font-size:14px;">{{ selectedEmail.senderEmail }}</div>
-          <div>
-            <span class="email-date" style="font-weight: bold;">{{ selectedEmail.date }}</span>
-          </div>
+          <div
+            [ngStyle]="{
+              display: 'flex',
+              flexDirection: isCompressed ? 'column' : 'row',
+              alignItems: isCompressed ? 'flex-start' : 'center',
+              gap: isCompressed ? '4px' : '12px',
+              width: '100%'
+            }"
+          >
+            <img [src]="selectedEmail.avatarUrl" alt="Avatar" class="avatar"
+              [ngStyle]="{
+                width: isCompressed ? '32px' : '48px',
+                height: isCompressed ? '32px' : '48px',
+                borderRadius: '50%'
+              }"
+            />
+            <div [ngStyle]="{ display: 'flex', flexDirection: 'column', alignItems: isCompressed ? 'flex-start' : 'flex-start', gap: isCompressed ? '2px' : '6px' }">
+              <div [ngStyle]="{ fontWeight: 600, color: '#1ca3e9', fontSize: isCompressed ? '12px' : '16px' }">{{ selectedEmail.senderName }}</div>
+              <div [ngStyle]="{ color: '#444', fontSize: isCompressed ? '10px' : '14px' }">{{ selectedEmail.senderEmail }}</div>
+              <span class="email-date" [ngStyle]="{ fontWeight: 'bold', fontSize: isCompressed ? '10px' : '12px', color: '#888' }">{{ selectedEmail.date }}</span>
+            </div>
           </div>
 
         </div>
