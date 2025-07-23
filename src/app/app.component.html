@@ -3326,10 +3326,10 @@
   </div>
 </div>
 
-  <div class="content" role="main" id="mainContent" [class.compressed]="isCompressed">
+<div class="content" role="main" id="mainContent" [class.compressed]="isCompressed" [ngStyle]="{ marginTop: '0', paddingTop: '0' }">
 
   <!-- mailbox-layout is always present; compressed state is handled by class binding -->
-  <div class="mailbox-layout" [ngClass]="{'compressed': isCompressed}" [style.cursor]="isCompressed ? 'pointer' : 'default'" (click)="isCompressed ? toggleCompressed() : null">
+  <div class="mailbox-layout" [ngClass]="{'compressed': isCompressed}" [style.cursor]="isCompressed ? 'pointer' : 'default'" (click)="isCompressed ? toggleCompressed() : null" [ngStyle]="{ marginTop: '32px' }">
     
 
 
