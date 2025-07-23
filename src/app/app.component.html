@@ -3336,11 +3336,32 @@
 
 
     <aside class="sidebar">
-      <div class="sidebar-header" style="display: flex; align-items: center; gap: 8px;">
-        <img src="assets/attachments/image9.png" style="width:48px; height:48px; border-radius:50%;" />
+      <div class="sidebar-header"
+        [ngStyle]="{
+          display: 'flex',
+          alignItems: 'center',
+          gap: isCompressed ? '4px' : '8px',
+          flexDirection: isCompressed ? 'column' : 'row',
+          justifyContent: isCompressed ? 'flex-start' : 'flex-start'
+        }"
+      >
+        <img src="assets/attachments/image9.png"
+          [ngStyle]="{
+            width: isCompressed ? '32px' : '48px',
+            height: isCompressed ? '32px' : '48px',
+            borderRadius: '50%'
+          }"
+        />
         <div>
-          <div style="font-weight:600; color:#1ca3e9; font-size:16px;">Mike Manson</div>
-          <div style="color:#444; font-size:14px;">iamkiran@gmail.com</div>
+          <div [ngStyle]="{
+            fontWeight: 600,
+            color: '#1ca3e9',
+            fontSize: isCompressed ? '12px' : '16px'
+          }">Mike Manson</div>
+          <div [ngStyle]="{
+            color: '#444',
+            fontSize: isCompressed ? '10px' : '14px'
+          }">iamkiran@gmail.com</div>
         </div>
       </div>
       <nav class="nav-links">
